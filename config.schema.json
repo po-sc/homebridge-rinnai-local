@@ -1,0 +1,84 @@
+{
+  "pluginAlias": "RinnaiLocal",
+  "pluginType": "platform",
+  "singular": true,
+  "headerDisplay": "Rinnai boiler with the WF-100W Wi-Fi controller. Your router must redirect the controller's cloud traffic (TCP 9105) to this Homebridge — see the README.",
+  "footerDisplay": "Start with **Read-only** on, check the log shows the boiler state, then turn it off to allow control.",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Platform name",
+        "type": "string",
+        "default": "Rinnai Boiler",
+        "required": true
+      },
+      "heatingName": {
+        "title": "Heating tile name",
+        "type": "string",
+        "placeholder": "Heating"
+      },
+      "hotWaterName": {
+        "title": "Hot water tile name",
+        "type": "string",
+        "placeholder": "Hot Water"
+      },
+      "port": {
+        "title": "Local port",
+        "type": "integer",
+        "default": 9105,
+        "minimum": 1,
+        "maximum": 65535,
+        "description": "The controller talks to TCP 9105. Change only if your router rewrites the port."
+      },
+      "mac": {
+        "title": "Controller MAC address",
+        "type": "string",
+        "placeholder": "78ee4c000000",
+        "description": "12 hex digits. Leave empty to accept any controller; its MAC is printed in the log."
+      },
+      "readOnly": {
+        "title": "Read-only",
+        "type": "boolean",
+        "default": true,
+        "description": "Only show the boiler state, never send commands."
+      },
+      "powerSwitches": {
+        "title": "Separate power switches",
+        "type": "boolean",
+        "default": false,
+        "description": "Thermostats only offer Heat, and on/off moves to extra switches \"<name> Power\". Stops Siri from turning the boiler off on \"turn off the AC\"."
+      },
+      "cloudProxy": {
+        "title": "Forward to the Rinnai cloud",
+        "type": "boolean",
+        "default": true,
+        "description": "Keeps the My Rinnai app working. If the cloud is down, the plugin answers the controller itself."
+      },
+      "cloudHost": {
+        "title": "Cloud IP address",
+        "type": "string",
+        "default": "37.206.147.54",
+        "description": "Where your controller connects to. EU: 37.206.147.54. Korea: the IP of wifiboilers1.rinnai.co.kr. Use an IP, not a hostname."
+      },
+      "cloudPort": {
+        "title": "Cloud port",
+        "type": "integer",
+        "default": 9105
+      }
+    }
+  },
+  "layout": [
+    "name",
+    { "type": "flex", "flex-flow": "row wrap", "items": ["heatingName", "hotWaterName"] },
+    "mac",
+    "readOnly",
+    "powerSwitches",
+    {
+      "type": "fieldset",
+      "title": "Cloud and network",
+      "expandable": true,
+      "items": ["cloudProxy", { "type": "flex", "flex-flow": "row wrap", "items": ["cloudHost", "cloudPort"] }, "port"]
+    }
+  ]
+}

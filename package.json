@@ -1,0 +1,46 @@
+{
+  "name": "homebridge-rinnai-local",
+  "displayName": "Rinnai WF-100W (Local)",
+  "version": "1.0.0",
+  "description": "Homebridge plugin for Rinnai boilers with the WF-100W Wi-Fi controller. Runs locally next to the Rinnai cloud, so the My Rinnai app keeps working.",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "config.schema.json",
+    "README.md",
+    "README.ru.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "license": "MIT",
+  "author": "po-sc",
+  "homepage": "https://github.com/po-sc/homebridge-rinnai-local#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/po-sc/homebridge-rinnai-local.git"
+  },
+  "bugs": {
+    "url": "https://github.com/po-sc/homebridge-rinnai-local/issues"
+  },
+  "keywords": [
+    "homebridge-plugin",
+    "homebridge",
+    "homekit",
+    "rinnai",
+    "wf-100w",
+    "boiler",
+    "thermostat",
+    "hot-water",
+    "my-rinnai"
+  ],
+  "engines": {
+    "homebridge": "^1.8.0 || ^2.0.0",
+    "node": "^18.20.4 || ^20.18.0 || ^22.10.0 || ^24.0.0"
+  },
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "devDependencies": {
+    "@homebridge/hap-nodejs": "^2.2.3"
+  }
+}
