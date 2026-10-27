@@ -144,6 +144,10 @@ npm test
 
 The test starts the plugin and a fake cloud on ports 19105–19107 and covers registration, state, commands, app priority, cloud failure and `powerSwitches`.
 
+## Releasing
+
+Bump `version` in `package.json`, add a `CHANGELOG.md` entry, push, then create a GitHub release with tag `v<version>`. The *publish* workflow tests and publishes to npm via trusted publishing.
+
 ## Credits and disclaimer
 
 Protocol from [sasamix/ha-rinnai-boiler](https://github.com/sasamix/ha-rinnai-boiler) and [mog422/open-rinnai-server](https://github.com/mog422/open-rinnai-server) (MIT).
