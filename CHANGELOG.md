@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1
+
+- Releases are published to npm from GitHub with provenance (trusted publishing).
+
 ## 1.0.0
 
 - First public release.

@@ -1,7 +1,7 @@
 {
   "name": "homebridge-rinnai-local",
   "displayName": "Rinnai WF-100W (Local)",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Homebridge plugin for Rinnai boilers with the WF-100W Wi-Fi controller. Runs locally next to the Rinnai cloud, so the My Rinnai app keeps working.",
   "main": "index.js",
   "files": [
